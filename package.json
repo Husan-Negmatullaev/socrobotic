@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.6",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-redux": "^8.0.4",
+    "react-router-dom": "^6.4.3",
     "react-scripts": "latest",
     "sass": "latest",
     "web-vitals": "latest"

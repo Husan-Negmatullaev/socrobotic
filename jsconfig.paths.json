@@ -4,6 +4,7 @@
     "paths": {
       "@components": ["components"],
       "@layouts": ["components/layouts"],
+      "@views": ["views"],
       "@utils": ["utils"],
       "@constants": ["utils/constants"],
       "@helpers": ["utils/helpers"],

@@ -6,3 +6,12 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../../assets/fonts/Nunito-Regular.woff2') format('woff2'),
+    url('../../assets/fonts/Nunito-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
