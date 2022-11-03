@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components": ["components"],
+      "@layouts": ["components/layouts"],
+      "@utils": ["utils"],
+      "@constants": ["utils/constants"],
+      "@helpers": ["utils/helpers"],
+      "@styles": ["styles"],
+      "@mixins": ["styles/base/mixins.scss"],
+      "@services": ["services"],
+      "@fonts": ["assets/fonts"],
+      "@images": ["assets/img"],
+    }
+  }
+}
