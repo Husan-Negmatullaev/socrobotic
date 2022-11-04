@@ -2,6 +2,8 @@ import React from 'react'
 import clsx from "clsx";
 import { Link } from "react-router-dom";
 
+import { NavBar } from '@components/navigation';
+
 import styles from "./Header.module.scss";
 import logo from "@images/logo.svg";
 
@@ -21,7 +23,7 @@ const Header = () => {
                   <a href="mailto:support@socrobotic.pro" className="social__link">
                     <span className="_icon-email"></span>
                   </a>
-                  <a href="mailto:support@socrobotic.pro" className="social__link">
+                  <a href="tg://resolve?domain=SocroboticHelp_bot" className="social__link">
                     <span className="_icon-telegram"></span>
                   </a>
                 </div>
@@ -33,21 +35,15 @@ const Header = () => {
                   <li className={styles.menuHeader__item}>
                     <Link to={"/partners"} className={styles.menuHeader__link}>Партнеры</Link>
                   </li>
+                  <li className={clsx(styles.menuHeader__item, styles.menuHeader__item_tel)}>
+                    <a href="tel:84997046108" className={styles.menuHeader__link}>8 499 704-61-08</a>
+                  </li>
                 </ul>
               </nav>
             </div>
           </div>
-          <div className={clsx(styles.header__navLink, styles.navLink)}>
-            <div className={styles.navLink__body}>
-              <div className={styles.navLink__item}>
-                <span className={clsx(styles.navLink__icon, "_icon-user")}></span>
-                <div className={styles.navLink__title}>Профиль</div>
-              </div>
-              <div className={styles.navLink__item}>
-                <span className={clsx(styles.navLink__icon, "_icon-basket")}></span>
-                <div className={styles.navLink__title}>Корзина</div>
-              </div>
-            </div>
+          <div className={styles.header__navLink}>
+            <NavBar />
           </div>
         </div>
       </div>

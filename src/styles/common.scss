@@ -1,1 +1,23 @@
 // Бем блоки...
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: rem(15);
+
+  @media (max-width:$mobile) {
+    gap: rem(10);
+  }
+
+  &__link {
+    font-size: rem(24);
+    color: rgb(34, 101, 206);
+    transition: color 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #68D9FE;
+      }
+    }
+  }
+}

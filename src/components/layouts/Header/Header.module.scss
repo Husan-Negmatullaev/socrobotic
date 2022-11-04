@@ -1,4 +1,132 @@
+@use "sass:math";
+@import "@mixins";
+@import "@styles-variables";
+
 .header {
 
   &__contaienr {}
+
+  &__body {
+    min-height: rem(120);
+    display: flex;
+    align-items: center;
+
+    @media (min-width:$mobile) {
+      gap: rem(15);
+    }
+
+    @media (max-width:$tablet) {
+      min-height: rem(110);
+    }
+
+    @media (max-width:$mobile) {
+      min-height: rem(80);
+    }
+  }
+
+  &__content {
+    // flex: 1 1 auto;
+  }
+
+  &__navLink {
+    flex: 1 1 auto;
+  }
 }
+
+//========================================================================================================================================================
+
+.contentHeader {
+  display: flex;
+  align-items: center;
+  @include adaptiveValue("column-gap", 45, 10, 1200, 767.98, 1);
+
+  // @media (max-width:$mobile) {
+  //   justify-content: space-between;
+  // }
+
+  &__logo {
+    @media (max-width:$mobile) {
+      flex: 0 1 rem(40);
+      overflow: hidden;
+    }
+
+  }
+
+  &__actions {
+    @media (min-width:$mobile) {
+      margin: 0px 0px 0px rem(10);
+    }
+
+    @media (max-width:$mobileSmall) {
+      display: none;
+    }
+  }
+}
+
+.headerActions {
+
+  &__action {
+    display: flex;
+    align-items: center;
+  }
+
+  &__telLink {
+    line-height: math.div(28, 22);
+    white-space: nowrap;
+    @include adaptiveValue("font-size", 22, 18, 1200, 991.98, 1);
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: rem(15);
+    }
+  }
+
+  &__social {}
+}
+
+.menuHeader {
+  &__nav {}
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: rem(8);
+    column-gap: rem(10);
+
+    @media (min-width:$mobileSmall) {
+      align-items: center;
+    }
+
+    @media (max-width:$mobileSmall) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    color: #000;
+    @include adaptiveValue("font-size", 19, 16, 1200, 479.98);
+    text-decoration: underline;
+    line-height: math.div(22, 19);
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &_tel {
+      @media (min-width:$mobileSmall) {
+        display: none;
+      }
+    }
+  }
+
+  &__link {}
+}
+
+//========================================================================================================================================================

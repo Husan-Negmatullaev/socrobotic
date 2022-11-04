@@ -9,8 +9,11 @@
       "@constants": ["utils/constants"],
       "@helpers": ["utils/helpers"],
       "@styles": ["styles"],
+      "@styles-variables": ["styles/base/variables.scss"],
       "@mixins": ["styles/base/mixins.scss"],
+      "@icons": ["styles/fonts/icons.scss"],
       "@services": ["services"],
+      "@hooks": ["services/hooks"],
       "@fonts": ["assets/fonts"],
       "@images": ["assets/img"],
     }

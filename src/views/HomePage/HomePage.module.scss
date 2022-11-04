@@ -1,0 +1,49 @@
+@use "sass:math";
+@import "@styles-variables";
+@import "@mixins";
+
+.page__mainBlock {}
+
+.mainBlock {
+  @include adaptiveValue("margin-top", 55, 20, 1200, 767.98, 1);
+  @include adaptiveValue("padding-bottom", 110, 30, 1200, 767.98, 1);
+
+  &__container {}
+
+  &__body {}
+
+  &__content {}
+
+  &__title {
+    @include adaptiveValue("font-size", 56, 25);
+    font-weight: 700;
+    line-height: math.div(62, 56);
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 56, 15, 1200, 767.98, 1);
+    }
+
+    span {
+      color: #2265ce;
+    }
+  }
+
+  &__list {
+    li {
+
+      &:not(:last-child) {
+        margin-bottom: rem(35);
+
+        @media (max-width:$tablet) {
+          margin-bottom: rem(25);
+        }
+
+        @media (max-width:$mobile) {
+          margin-bottom: rem(15);
+        }
+      }
+    }
+  }
+
+  &__text {}
+}

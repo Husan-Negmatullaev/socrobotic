@@ -1,0 +1,134 @@
+@use "sass:math";
+@import "@mixins";
+@import "@styles-variables";
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: rem(10);
+
+  @media (max-width:$mobile) {
+    position: fixed;
+    top: rem(-105);
+    right: rem(-55);
+    width: rem(190);
+    height: rem(190);
+    column-gap: rem(20);
+    background: linear-gradient(356.24deg, #206bc4 27.12%, #0b2391 98.27%);
+    border: 6px solid #56d7ff;
+    border-radius: 50%;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0px 0px rem(35) rem(30);
+  }
+
+  &_fixed {
+    @media (min-width:$mobile) {
+      position: fixed;
+      top: rem(-55);
+      right: rem(-230);
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+      background: linear-gradient(356.24deg, #206bc4 27.12%, #0b2391 98.27%);
+      border: 6px solid #56d7ff;
+      width: rem(360);
+      height: rem(365);
+      border-radius: 100%;
+      padding: rem(75) rem(35);
+    }
+  }
+
+
+  &__item {
+    // flex: 0 1 rem(75);
+    text-align: center;
+
+    @media (any-hover: hover) {
+      &:hover {
+        .navBar__title {
+          text-decoration: underline;
+        }
+
+        .navBar__icon {
+          &::after {
+            transform: scale(1.6);
+          }
+        }
+      }
+    }
+  }
+
+  &__icon {
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: rem(35);
+    width: rem(35);
+    color: #fff;
+    font-size: rem(16);
+    position: relative;
+    z-index: 2;
+
+    .navBar_fixed & {
+      background-color: #fff;
+      color: #000;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #000;
+      border-radius: 50%;
+      transform: scale(1.5);
+      transition: transform 0.3s ease 0s;
+
+      .navBar_fixed & {
+        border: 2px solid #fff;
+      }
+
+      @media (max-width:$mobile) {
+        border: 1px solid #fff;
+      }
+    }
+
+    @media (max-width:$mobile) {
+      height: rem(30);
+      width: rem(30);
+      font-size: rem(15);
+      background-color: #fff;
+      border-color: #fff;
+
+      &::before {
+        // content: '';
+        color: #000;
+      }
+    }
+  }
+
+  &__title {
+    color: #000;
+    font-size: rem(16);
+
+    .navBar_fixed & {
+      color: #fff;
+    }
+
+    &:not(:first-child) {
+      margin-top: em(14, 16);
+    }
+
+    @media (max-width:$mobile) {
+      display: none;
+    }
+  }
+}

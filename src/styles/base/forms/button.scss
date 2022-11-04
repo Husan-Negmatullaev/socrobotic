@@ -1,0 +1,13 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.button {
+  display: inline-flex;
+  padding: 0px 0px;
+  font-size: rem(16);
+  line-height: math.div(20, 16);
+
+  &._fw {
+    width: 100%;
+  }
+}

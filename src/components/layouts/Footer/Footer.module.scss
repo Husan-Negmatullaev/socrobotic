@@ -1,0 +1,103 @@
+@use "sass:math";
+@import "@mixins";
+@import "@styles-variables";
+
+.footer {
+  background-color: #081545;
+  color: #fff;
+
+  &__container {}
+
+  &__body {}
+
+  &__header {
+    @include adaptiveValue("padding-top", 60, 25);
+    @include adaptiveValue("padding-bottom", 70, 35);
+    text-align: center;
+    max-width: rem(600);
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include adaptiveValue("font-size", 36, 24);
+    font-weight: 700;
+
+    &:not(:last-child) {
+      margin-bottom: em(60, 36);
+    }
+  }
+
+  &__list {
+    & li:not(:last-child) {
+      margin-bottom: rem(12);
+    }
+  }
+
+  &__itemLink {
+    font-size: rem(22);
+    line-height: math.div(28, 22);
+    display: inline-flex;
+    align-items: center;
+    column-gap: rem(13);
+
+    @media (max-width: $tablet) {
+      font-size: rem(18);
+    }
+
+    @media (any-hover: hover) {
+      &:hover span {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__bottom {
+    @include adaptiveValue("padding-top", 20, 15);
+    @include adaptiveValue("padding-bottom", 20, 15);
+    border-top: 1px solid hsla(0, 0%, 100%, .25);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(20);
+    font-size: rem(16);
+
+    @media (max-width:$tablet) {
+      gap: rem(15);
+    }
+
+    @media (max-width:$mobile) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__info {}
+
+  &__text {
+    line-height: math.div(23, 16);
+    opacity: 0.5;
+
+    @media (max-width:$mobile) {
+      text-align: center;
+    }
+  }
+
+  &__links {
+    text-align: right;
+
+    @media (max-width:$mobile) {
+      text-align: center;
+    }
+  }
+
+  &__link {
+    &:not(:last-child) {
+      margin-right: rem(32);
+    }
+
+    opacity: 0.5;
+    text-decoration: underline !important;
+  }
+}
