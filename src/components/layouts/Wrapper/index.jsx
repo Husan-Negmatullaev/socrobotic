@@ -5,13 +5,13 @@ import Footer from '@layouts/Footer/Footer';
 
 const Wrapper = () => {
   return (
-    <div className="wrapper">
+    <>
       <Header />
       <main className="page">
         <Outlet />
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
 

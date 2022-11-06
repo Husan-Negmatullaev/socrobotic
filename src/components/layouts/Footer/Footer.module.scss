@@ -3,6 +3,8 @@
 @import "@styles-variables";
 
 .footer {
+  position: relative;
+  z-index: 2;
   background-color: #081545;
   color: #fff;
 

@@ -1,18 +1,114 @@
 @use "sass:math";
 @import "@styles-variables";
 @import "@mixins";
+@import "@icons";
 
 .page__mainBlock {}
 
 .mainBlock {
+  // position: relative;
+
   @include adaptiveValue("margin-top", 55, 20, 1200, 767.98, 1);
-  @include adaptiveValue("padding-bottom", 110, 30, 1200, 767.98, 1);
+  @include adaptiveValue("padding-bottom", 110, 20, 1200, 767.98, 1);
+
+  @media (max-width:$mobile) {
+    padding-bottom: 0;
+  }
 
   &__container {}
 
-  &__body {}
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: flex-end;
 
-  &__content {}
+    @media (max-width: rem(767.98)) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: rem(767.98)) {
+      grid-template-columns: rem(500) 1fr;
+    }
+
+    @media (min-width: rem(991.98)) {
+      grid-template-columns: rem(600) 1fr;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    margin: 0px 0px rem(20) 0px;
+
+    @media (min-width: rem(767.98)) {
+      margin: 0px rem(15) 0px 0px;
+    }
+  }
+
+  &__media {
+
+    @media (min-width: rem(767.98)) {
+      align-self: flex-end;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -55%;
+      height: 100%;
+      width: 100vw;
+      border: 6px solid #56d7ff;
+      transform: rotate(-45deg);
+      border-radius: 250px;
+      background: linear-gradient(356.24deg, #206bc4 27.12%, #0b2391 98.27%);
+
+      @media (max-width: rem(991.98)) {
+        right: -65%;
+        top: -10%;
+        transform: rotate(-65deg);
+      }
+
+      @media (max-width: rem(767.98)) {
+        border-radius: 50%;
+      }
+    }
+
+    @media (max-width: rem(767.98)) {
+      position: relative;
+      justify-self: center;
+      // width: rem(640);
+      height: 180%;
+      padding: rem(20) 0px 0px 0px;
+
+      &::after {
+        content: '';
+        top: 0;
+        left: 50%;
+        width: 40rem;
+        height: 100%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: rem(991.98)) {
+      margin-top: 20%;
+    }
+
+    @media (max-width: rem(767.98)) {
+      max-width: rem(300);
+      margin: 0 auto;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
 
   &__title {
     @include adaptiveValue("font-size", 56, 25);
@@ -29,7 +125,11 @@
   }
 
   &__list {
+    @include adaptiveValue("margin-bottom", 65, 20, 1200, 767.98, 1);
+    max-width: rem(400);
+
     li {
+      position: relative;
 
       &:not(:last-child) {
         margin-bottom: rem(35);
@@ -42,8 +142,37 @@
           margin-bottom: rem(15);
         }
       }
+
+      &::before {
+        @extend %ic;
+        content: "\e906";
+        position: absolute;
+        top: rem(7);
+        left: 0;
+        font-size: rem(17);
+        color: rgb(34, 101, 206);
+      }
     }
   }
 
-  &__text {}
+  &__text {
+    padding: 0px 0px 0px rem(30);
+    font-size: rem(22);
+    line-height: math.div(28, 22);
+
+    span {
+      color: #0b294f;
+      font-weight: 600;
+    }
+
+    @media (max-width:$tablet) {
+      font-size: rem(18);
+      padding: 0px 0px 0px rem(25);
+    }
+
+    @media (max-width:$mobile) {
+      font-size: rem(16);
+      padding: 0px 0px 0px rem(20);
+    }
+  }
 }

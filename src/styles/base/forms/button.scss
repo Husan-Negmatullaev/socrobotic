@@ -3,9 +3,23 @@
 
 .button {
   display: inline-flex;
-  padding: 0px 0px;
+  align-items: center;
+  justify-content: center;
+  gap: rem(10);
+  padding: rem(13) rem(35);
   font-size: rem(16);
   line-height: math.div(20, 16);
+  border-radius: 16px;
+  background-color: #ffda44;
+  font-size: rem(22);
+  line-height: math.div(28, 26);
+  transition: background-color 0.3s ease 0s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #e0c03c;
+    }
+  }
 
   &._fw {
     width: 100%;

@@ -3,6 +3,8 @@
 @import "@styles-variables";
 
 .header {
+  position: relative;
+  z-index: 5;
 
   &__contaienr {}
 
