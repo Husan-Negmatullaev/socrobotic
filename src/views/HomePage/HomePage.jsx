@@ -10,7 +10,7 @@ const HomePage = () => {
   return (
     <>
       <section className={styles.mainBlock}>
-        <div className="container">
+        <div className={clsx(styles.mainBlock__container, "container")}>
           <div className={styles.mainBlock__body}>
             <div className={styles.mainBlock__content}>
               <h1 className={styles.mainBlock__title}>
@@ -35,10 +35,8 @@ const HomePage = () => {
               </ul>
               <button type="button" className="button">Хочу аккаунты!</button>
             </div>
-            <div className={styles.mainBlock__media}>
-              <div className={styles.mainBlock__image}>
-                <img src={image} alt="Картинка робота" />
-              </div>
+            <div className={styles.mainBlock__image}>
+              <img src={image} alt="Картинка робота" />
             </div>
           </div>
         </div>

@@ -1,13 +1,11 @@
 @use "sass:math";
-@import "@styles-variables";
 @import "@mixins";
 @import "@icons";
+@import "@styles-variables";
 
 .page__mainBlock {}
 
 .mainBlock {
-  // position: relative;
-
   @include adaptiveValue("margin-top", 55, 20, 1200, 767.98, 1);
   @include adaptiveValue("padding-bottom", 110, 20, 1200, 767.98, 1);
 
@@ -19,19 +17,15 @@
 
   &__body {
     display: grid;
-    grid-template-columns: 1fr;
-    justify-items: flex-end;
+    position: relative;
+    grid-template-columns: minmax(rem(615), 1fr) 1fr;
 
-    @media (max-width: rem(767.98)) {
+    @media (max-width:$tablet) {
+      grid-template-columns: rem(515) 1fr;
+    }
+
+    @media (max-width:$mobile) {
       grid-template-columns: 1fr;
-    }
-
-    @media (min-width: rem(767.98)) {
-      grid-template-columns: rem(500) 1fr;
-    }
-
-    @media (min-width: rem(991.98)) {
-      grid-template-columns: rem(600) 1fr;
     }
   }
 
@@ -45,68 +39,72 @@
     }
   }
 
-  &__media {
+  &__image {
+    display: flex;
+    background: linear-gradient(356.24deg, #206bc4 27.12%, #0b2391 98.27%);
+    border: 6px solid #56d7ff;
+    border-radius: 250px;
+    height: 300%;
+    position: absolute;
+    right: -240%;
+    top: -178%;
+    transform: rotate(-45deg);
+    width: 300%;
 
-    @media (min-width: rem(767.98)) {
-      align-self: flex-end;
-    }
-
-    &::after {
-      content: '';
+    img {
+      left: 5%;
+      top: 2%;
       position: absolute;
-      top: 0;
-      right: -55%;
-      height: 100%;
-      width: 100vw;
-      border: 6px solid #56d7ff;
-      transform: rotate(-45deg);
-      border-radius: 250px;
-      background: linear-gradient(356.24deg, #206bc4 27.12%, #0b2391 98.27%);
+      transform: rotate(45deg);
+    }
 
-      @media (max-width: rem(991.98)) {
-        right: -65%;
-        top: -10%;
-        transform: rotate(-65deg);
-      }
+    @media (max-width:$tablet) {
+      right: -215%;
+      top: -290%;
+      transform: rotate(-75deg);
 
-      @media (max-width: rem(767.98)) {
-        border-radius: 50%;
+      img {
+        left: 5%;
+        top: 1%;
+        width: 10%;
+        transform: rotate(75deg);
       }
     }
 
-    @media (max-width: rem(767.98)) {
+    @media (max-width:$mobile) {
+      right: unset;
+      top: unset;
+      transform: none;
+      width: 100%;
+      height: 100%;
       position: relative;
-      justify-self: center;
-      // width: rem(640);
-      height: 180%;
-      padding: rem(20) 0px 0px 0px;
+      justify-content: center;
+      background: none;
+      border: none;
 
       &::after {
         content: '';
+        position: absolute;
         top: 0;
         left: 50%;
-        width: 40rem;
-        height: 100%;
-        transform: translate(-50%, 0);
+        width: rem(600);
+        // padding-bottom: percent(600, 1200);
+        height: rem(600);
+        transform: translate(-50%, 0px);
+        border-radius: 50%;
+        background: linear-gradient(356.24deg, #206bc4 27.12%, #0b2391 98.27%);
+        border: 6px solid #56d7ff;
       }
-    }
-  }
 
-  &__image {
-    position: relative;
-    z-index: 1;
-
-    @media (min-width: rem(991.98)) {
-      margin-top: 20%;
-    }
-
-    @media (max-width: rem(767.98)) {
-      max-width: rem(300);
-      margin: 0 auto;
-    }
-
-    img {
-      max-width: 100%;
+      img {
+        transform: none;
+        position: relative;
+        top: unset;
+        left: unset;
+        width: 60%;
+        z-index: 2;
+        margin: rem(20) 0px;
+      }
     }
   }
 
