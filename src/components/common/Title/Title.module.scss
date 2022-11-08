@@ -1,0 +1,18 @@
+@use "sass:math";
+@import "@mixins";
+@import "@styles-variables";
+
+.title {
+  color: #0a1b4f;
+  font-size: rem(36);
+  font-weight: 700;
+  line-height: math.div(40, 36);
+
+  @media (max-width:$tablet) {
+    font-size: rem(30);
+  }
+
+  @media (max-width:$mobile) {
+    font-size: rem(26);
+  }
+}

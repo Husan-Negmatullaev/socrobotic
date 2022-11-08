@@ -36,7 +36,7 @@ $responsiveType: 1;
 
 body {
   font-weight: 400;
-  color: #000;
+  color: #222;
 
   // Скролл заблокирован
   .lock & {
@@ -139,3 +139,18 @@ body {
 @import "app";
 
 .page {}
+
+@media (min-width:$mobile) {
+  .dark:not(.NavBar_navBar_fixed__A5CPf) .NavBar_navBar__title__6t5Yd {
+    color: #0b294f;
+  }
+
+  .dark:not(.NavBar_navBar_fixed__A5CPf) .NavBar_navBar__icon__MkBA6 {
+    color: #fff;
+    background-color: #0b294f;
+
+    &::after {
+      border-color: #0b294f;
+    }
+  }
+}

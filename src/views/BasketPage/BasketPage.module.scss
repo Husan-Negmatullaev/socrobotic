@@ -1,0 +1,26 @@
+@use "sass:math";
+@import "@mixins";
+@import "@styles-variables";
+
+.basket {
+  @include adaptiveValue("margin-top", 15, 10);
+  @include adaptiveValue("margin-bottom", 50, 30);
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 35, 15);
+  }
+
+  &__body {}
+
+  &__content {}
+
+  &__footer {}
+
+  &__footerHeader {}
+
+  &__info {}
+
+  &__buttons {}
+
+  &__button {}
+}

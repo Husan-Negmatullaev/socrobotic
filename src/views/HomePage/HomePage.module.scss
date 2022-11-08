@@ -1,6 +1,6 @@
 @use "sass:math";
-@import "@mixins";
 @import "@icons";
+@import "@mixins";
 @import "@styles-variables";
 
 .page__mainBlock {}
@@ -173,4 +173,33 @@
       padding: 0px 0px 0px rem(20);
     }
   }
+}
+
+.accounts {
+  background-color: #081545;
+  position: relative;
+  z-index: 2;
+  @include adaptiveValue("padding-top", 60, 25);
+  @include adaptiveValue("padding-bottom", 60, 25);
+
+  &__header {
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 25);
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 0 64px #2265ce;
+    @include adaptiveValue("padding-top", 50, 25);
+    @include adaptiveValue("padding-bottom", 50, 25);
+    @include adaptiveValue("padding-left", 70, 40);
+    @include adaptiveValue("padding-right", 70, 40);
+  }
+
+  &__item {}
 }

@@ -21,3 +21,32 @@
     }
   }
 }
+
+.section-header {
+  max-width: rem(670);
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+
+  &__title {
+    @include adaptiveValue("font-size", 36, 24);
+    font-weight: 700;
+    line-height: math.div(40, 36);
+
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+  }
+
+  &__text {
+    opacity: 0.5;
+    @include adaptiveValue("font-size", 22, 16);
+    line-height: math.div(26, 22);
+  }
+}
+
+._mobile {
+  @media (min-width:$mobile) {
+    display: none !important;
+  }
+}

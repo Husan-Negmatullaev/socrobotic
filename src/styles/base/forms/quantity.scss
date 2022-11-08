@@ -1,36 +1,86 @@
 //<QUANTITY>
 // Снипет (HTML): qa
 .quantity {
-  width: 88px;
-  height: 40px;
-  display: flex;
-  border: 1px solid rgba(166, 166, 166, 0.45);
+
+  &__label {
+    color: rgba(11, 41, 79, .5);
+    font-size: 12px;
+    line-height: 130%;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: rem(5);
+    }
+
+    @media (max-width:$mobile) {
+      text-align: left;
+    }
+  }
+
+  // .quantity__actions
+  &__actions {
+    margin: 0 auto;
+    width: rem(250);
+    height: rem(55);
+    display: flex;
+    gap: rem(12);
+
+    @media (max-width:$tablet) {
+      width: rem(200);
+      height: rem(48);
+    }
+
+    @media (max-width:$mobile) {
+      gap: rem(6);
+    }
+
+    @media (max-width:$mobileSmall) {
+      width: 100%;
+      height: rem(60);
+    }
+  }
 
   // .quantity__button
   &__button {
-    flex: 0 0 30px;
+    flex: 0 0 rem(55);
+    border: 2px solid #081545;
+    border-radius: 15px;
     position: relative;
     cursor: pointer;
+    transition: background-color 0.3s ease 0s;
+
+    @media (max-width:$tablet) {
+      flex: 0 0 rem(48);
+    }
+
+    @media (max-width:$mobileSmall) {
+      flex: 0 0 rem(60);
+    }
 
     &::before,
     &::after {
       content: "";
       position: absolute;
       top: 50%;
-      left: 50%;
-      transition: all 0.3s ease 0s;
+      left: 58%;
+      transition: background-color 0.3s ease 0s;
       margin: 0px 0px 0px -4.5px;
-      background-color: #a6a6a6;
-      width: 9px;
-      height: 1px;
+      background-color: #081545;
+      width: rem(15);
+      height: rem(2);
+      transform: translate(-50%, -50%);
     }
 
     @media (any-hover: hover) {
       &:hover {
+        background-color: #081545;
 
         &::before,
         &::after {
-          background-color: rgba(0, 0, 0, 0.5);
+          // background-color: rgba(0, 0, 0, 0.5);
+          background-color: #fff;
         }
       }
     }
@@ -38,7 +88,7 @@
     // .quantity__button_plus
     &_plus {
       &::before {
-        transform: rotate(-90deg);
+        transform: translate(-50%, -50%) rotate(-90deg);
       }
     }
 
@@ -51,11 +101,17 @@
     flex: 1 1 auto;
 
     input {
-      height: 100%;
-      color: #a6a6a6;
+      border: 2px solid #081545;
+      border-radius: 15px;
       font-size: 12px;
-      width: 100%;
+      color: #081545;
       text-align: center;
+      height: 100%;
+      width: 100%;
+      padding: rem(12) rem(8);
+      font-weight: 600;
+      font-size: rem(20);
+      line-height: math.div(26, 22);
     }
   }
 }

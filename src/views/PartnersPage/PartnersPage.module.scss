@@ -1,0 +1,170 @@
+@use "sass:math";
+@import "@mixins";
+@import "@styles-variables";
+
+.partners {
+
+  &__container {
+    max-width: rem(1040);
+    margin: 0 auto;
+  }
+
+  &__body {
+    @include adaptiveValue("padding-top", 110, 30);
+    @include adaptiveValue("padding-bottom", 165, 40);
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__tabs {}
+}
+
+.partnersTabs {
+  &__actions {
+    display: flex;
+    border-bottom: 1px solid #0d2661;
+    column-gap: rem(60);
+    position: relative;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__list {
+    flex: 1 1 auto;
+    min-height: rem(110);
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-between;
+    gap: rem(15);
+
+    @media (max-width:$tablet) {
+      max-width: rem(992);
+      overflow-x: auto;
+      gap: rem(40);
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: rem(4);
+      width: 100%;
+      border-radius: 5px 5px 0 0;
+    }
+
+    &_active::after {
+      background-color: #2265CE;
+    }
+
+    &Image {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+
+  &__next {
+    flex: 0 0 rem(55);
+    height: rem(55);
+    background-color: #2265CE;
+    transition: all 0.3s ease 0s;
+    border: 1px solid #2265CE;
+    color: #fff;
+    font-size: rem(22);
+    border-radius: 15px;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #fff;
+        color: #2265CE;
+      }
+    }
+
+    @media (max-width:$pc) {
+      display: none;
+    }
+  }
+
+  &__content {}
+
+  &__tabItem {}
+}
+
+.tabItem {
+  &__title {
+    color: #0a1b4f;
+    font-size: rem(24);
+    font-weight: 700;
+    line-height: math.div(28, 24);
+
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+
+      @media (max-width:$mobile) {
+        margin-bottom: rem(15);
+      }
+    }
+
+    &_top {
+      &:not(:last-child) {
+        margin-bottom: rem(40);
+
+        @media (max-width:$mobile) {
+          margin-bottom: rem(25);
+        }
+      }
+    }
+
+    @media (max-width:$mobile) {
+      font-size: rem(20);
+    }
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: rem(55);
+
+      @media (max-width:$mobile) {
+        margin-bottom: rem(35);
+      }
+    }
+
+    p {
+      color: #000;
+      font-size: rem(22);
+      line-height: math.div(24, 22);
+
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+
+        @media (max-width:$mobile) {
+          margin-bottom: rem(15);
+          font-size: rem(18);
+        }
+      }
+    }
+
+    a {
+      color: #2265ce;
+    }
+  }
+
+  &__footer {}
+
+  &__link {}
+}

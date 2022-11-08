@@ -1,0 +1,75 @@
+@use "sass:math";
+@import "@mixins";
+@import "@icons";
+@import "@styles-variables";
+
+.header {
+  &__body {
+    display: flex;
+    align-items: center;
+    min-height: rem(100);
+    justify-content: space-between;
+    gap: rem(10);
+
+    @media (max-width:$tablet) {
+      min-height: rem(90);
+    }
+
+    @media (max-width:$mobile) {
+      min-height: rem(80);
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    column-gap: rem(10);
+    color: #0b294f;
+    font-size: rem(22);
+
+    &::before {
+      font-weight: 700;
+      font-size: rem(26);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    @media (max-width:$mobile) {
+      span {
+        display: none;
+      }
+
+      &::before {
+        font-size: rem(30);
+      }
+    }
+  }
+
+  &__logo {
+    display: block;
+
+    @media (min-width:$mobile) {
+      margin: 0 auto;
+    }
+
+    @media (max-width:$mobileSmall) {
+      flex: 0 1 rem(40);
+      overflow: hidden;
+    }
+  }
+
+  &__navLink {}
+}

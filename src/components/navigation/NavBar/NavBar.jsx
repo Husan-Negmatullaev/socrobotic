@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 import styles from "./NavBar.module.scss";
 
-const NavBar = () => {
+const NavBar = ({ type = "light" }) => {
   const [isNavBarFixed, setIsNavBarFixed] = React.useState(false);
 
   function handleScrollNav(event) {
@@ -24,12 +24,12 @@ const NavBar = () => {
   }, []);
 
   return (
-    <div className={clsx(styles.navBar, { [styles.navBar_fixed]: isNavBarFixed })}>
+    <div className={clsx(styles.navBar, { [styles.navBar_fixed]: isNavBarFixed }, type)}>
       <Link to={"/profile"} className={styles.navBar__item}>
         <span className={clsx(styles.navBar__icon, "_icon-user")}></span>
         <div className={styles.navBar__title}>Профиль</div>
       </Link>
-      <Link to={"/profile/basket"} className={styles.navBar__item}>
+      <Link to={"/basket"} className={styles.navBar__item}>
         <span className={clsx(styles.navBar__icon, "_icon-basket")}></span>
         <div className={styles.navBar__title}>Корзина</div>
       </Link>
