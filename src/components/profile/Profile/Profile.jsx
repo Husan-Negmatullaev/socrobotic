@@ -38,13 +38,13 @@ const Profile = () => {
             <div className={styles.formProfile__column}>
               <h5 className={styles.formProfile__title}>Реферальная ссылка на сайт</h5>
               <Input readonly={true} label="Реферальная ссылка на сайт" name="username" value={"https://socrobotic.io/ref/user1070"}>
-                <button type="button" class={clsx(styles.formProfile__buttonCopy, "button button_blue button_small")}>Скопировать</button>
+                <button type="button" className={clsx(styles.formProfile__buttonCopy, "button button_blue button_small")}>Скопировать</button>
               </Input>
             </div>
           </div>
         </div>
         <div className={styles.formProfile__actions}>
-          <button type="button" class={clsx(styles.formProfile__button, "button button_big")}>Сохранить</button>
+          <button type="button" className={clsx(styles.formProfile__button, "button button_big")}>Сохранить</button>
         </div>
       </form>
     </div>
