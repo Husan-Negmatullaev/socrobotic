@@ -9,16 +9,81 @@ textarea {
   appearance: none;
 }
 
-.input {
-  border-radius: 0 !important;
-  width: 100%;
-  display: block;
-  padding: 0px 20px;
-  border: 1px solid #eee;
+.input-item {
+  font-size: rem(22);
+  position: relative;
 
-  &._focus {}
+  @media (max-width: rem(991.98)) {
+    font-size: rem(18);
+    padding-bottom: rem(5);
+  }
+
+  [readonly] {
+    .input-item__label {
+      font-size: rem(12) !important;
+      top: rem(12) !important;
+    }
+
+    .input-item__input {
+      padding-top: rem(32.5) !important;
+      padding-bottom: rem(18.5) !important;
+      height: rem(35) !important;
+    }
+  }
+
+  &._focus,
+  &._has {
+    .input-item__label {
+      font-size: rem(12);
+      top: rem(12);
+    }
+
+    .input-item__input {
+      padding-top: rem(32.5);
+      padding-bottom: rem(18.5);
+      height: rem(35);
+    }
+  }
 
   &._error {}
+
+  &__label {
+    color: #0b294f;
+    position: absolute;
+    top: 50%;
+    transform: translate(0px, -50%);
+    left: rem(18);
+    opacity: .5;
+    font-size: rem(22);
+    line-height: math.div(26, 22);
+    transition: all 0.2s linear 0s;
+    pointer-events: none;
+
+    @media (max-width: rem(991.98)) {
+      font-size: rem(18);
+    }
+
+    @media (max-width: rem(767.98)) {
+      left: rem(12);
+    }
+  }
+
+  &__input {
+    width: 100%;
+    display: block;
+    border: 2px solid #0b294f;
+    border-radius: 15px;
+    padding: rem(5) rem(18);
+    height: rem(55);
+    background-color: transparent;
+
+    // transition: padding-top 0.2s linear 0s;
+    @media (max-width: rem(767.98)) {
+      padding: rem(5) rem(10);
+    }
+  }
+
+  &__error {}
 }
 
 textarea.input {

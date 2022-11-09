@@ -1,0 +1,141 @@
+@use "sass:math";
+@import "@mixins";
+@import "@styles-variables";
+
+.profile {
+  margin-top: rem(20);
+
+  @media (max-width:$mobile) {
+    margin-top: rem(10);
+  }
+
+  &__body {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: percent(300, 1200) percent(660, 1200);
+    gap: rem(40);
+    margin-bottom: rem(110);
+
+    @media (max-width:$tablet) {
+      margin-bottom: rem(80);
+    }
+
+    @media (max-width:$mobile) {
+      margin-bottom: rem(50);
+      row-gap: rem(10);
+    }
+
+    @media (max-width:$mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__nav {
+    margin-bottom: rem(40);
+
+    @media (max-width:$tablet) {
+      margin-bottom: rem(25);
+    }
+
+    @media (max-width:$mobile) {
+      margin-bottom: rem(15);
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 20, $containerWidth, 767.98, 1);
+      @include adaptiveValue("font-size", 36, 26, $containerWidth, 767.98, 1);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width:$mobile) {
+      flex-direction: row;
+      gap: rem(20);
+    }
+
+    @media (max-width:$mobileSmall) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: rem(10);
+    }
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: rem(28);
+      }
+
+      @media (max-width:$tablet) {
+        &:not(:last-child) {
+          margin-bottom: rem(20);
+        }
+      }
+
+      @media (max-width:$mobile) {
+        margin-bottom: 0 !important;
+      }
+
+      @media (max-width:$mobile) {
+        flex: 1 1 auto;
+      }
+
+      @media (max-width:$mobileSmall) {
+        flex: 0 1 47%;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    cursor: pointer;
+    color: #0b294f;
+    font-size: rem(22);
+    padding-bottom: rem(28);
+    line-height: math.div(26, 22);
+    border-bottom: 1px solid rgba(11, 41, 79, .5);
+
+    @media (max-width:$tablet) {
+      font-size: rem(20);
+      padding-bottom: rem(22);
+    }
+
+    @media (max-width:$mobile) {
+      font-size: rem(18);
+      padding-bottom: rem(26);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        border-bottom: 2px solid #2265ce;
+        padding-bottom: rem(27);
+      }
+    }
+
+    &_active {
+      border-bottom: 2px solid #2265ce;
+      padding-bottom: rem(27);
+
+      @media (max-width:$tablet) {
+        font-size: rem(20);
+        padding-bottom: rem(22);
+      }
+
+      @media (max-width:$mobile) {
+        font-size: rem(18);
+        padding-bottom: rem(25);
+      }
+    }
+  }
+
+  &__button {}
+
+  &__content {
+    @media (min-width:$mobile) {
+      margin-top: rem(15);
+    }
+  }
+}

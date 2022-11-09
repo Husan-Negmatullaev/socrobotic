@@ -1,0 +1,23 @@
+@use "sass:math";
+@import "@mixins";
+@import "@styles-variables";
+
+.orders {
+  &__title {
+    font-size: rem(24);
+    font-weight: 700;
+    color: #0b294f;
+
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+    }
+
+    @media (max-width:$mobile) {
+      &:not(:last-child) {
+        margin-bottom: rem(15);
+      }
+    }
+  }
+
+  &__body {}
+}

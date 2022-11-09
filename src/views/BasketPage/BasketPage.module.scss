@@ -7,20 +7,47 @@
   @include adaptiveValue("margin-bottom", 50, 30);
 
   &__title {
-    @include adaptiveValue("margin-bottom", 35, 15);
+    @include adaptiveValue("margin-bottom", 50, 20);
   }
 
   &__body {}
 
-  &__content {}
+  &__content {
+    @include adaptiveValue("margin-bottom", 30, 20);
+  }
+
+  &__item {}
 
   &__footer {}
 
-  &__footerHeader {}
+  &__footerHeader {
+    display: flex;
+    justify-content: flex-end;
 
-  &__info {}
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 20);
+    }
+  }
 
-  &__buttons {}
+  &__info {
+    color: #0b294f;
+    font-size: rem(22);
+    line-height: math.div(26, 22);
+
+    span {
+      font-weight: 700;
+    }
+
+    @media (max-width:$tablet) {
+      font-size: rem(18);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   &__button {}
 }

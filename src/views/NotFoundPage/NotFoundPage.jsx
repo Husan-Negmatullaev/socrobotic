@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import styles from './NotFound.module.scss';
+import styles from './NotFoundPage.module.scss';
 
 const NotFound = () => {
   return (

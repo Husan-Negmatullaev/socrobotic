@@ -1,0 +1,106 @@
+@use "sass:math";
+@import "@mixins";
+@import "@styles-variables";
+
+.basketItem {
+  border-bottom: 1px solid rgba(11, 41, 79, .2);
+  padding-bottom: rem(30);
+
+
+  &:not(:first-child) {
+    padding-top: rem(30);
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+
+    @media (max-width:$mobile) {
+      align-items: flex-start;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: rem(345) rem(380) auto;
+    justify-content: space-between;
+    gap: rem(15);
+
+    @media (max-width:$pc) {
+      grid-template-columns: rem(255) rem(220) auto;
+      align-items: center;
+    }
+
+    @media (max-width:$mobile) {
+      grid-template-columns: 1fr;
+      justify-items: flex-start;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {}
+
+  &__name {
+    color: #0b294f;
+    font-size: rem(22);
+    line-height: math.div(33, 22);
+
+    span {
+      display: inline-flex;
+      width: rem(21);
+      height: rem(15);
+      margin-right: rem(10);
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width:$tablet) {
+      font-size: rem(18);
+    }
+  }
+
+  &__quentity {}
+
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__info {
+    color: #0b294f;
+    font-size: 22px;
+
+    span {
+      font-weight: 700;
+    }
+
+    @media (max-width:$tablet) {
+      font-size: rem(18);
+    }
+  }
+
+  &__action {}
+
+  &__button {
+    flex: 0 0 rem(36);
+    height: rem(36);
+    font-size: rem(10);
+    background-color: #E9E9E9;
+    border-radius: 50%;
+    color: #0b294f;
+    border: 1px solid #E9E9E9;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #fff;
+        color: #000;
+      }
+    }
+  }
+}

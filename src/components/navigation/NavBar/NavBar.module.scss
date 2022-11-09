@@ -24,6 +24,8 @@
       height: rem(310);
       border-radius: 100%;
       padding: rem(75) rem(25);
+      z-index: 10;
+
     }
 
     @media (min-width:$tablet) {
@@ -32,6 +34,8 @@
       width: rem(360);
       height: rem(365);
       right: rem(-240);
+      z-index: 10;
+
     }
   }
 
@@ -48,6 +52,8 @@
     justify-content: flex-start;
     align-items: flex-end;
     padding: 0px 0px rem(35) rem(30);
+    z-index: 10;
+
   }
 
   &__item {

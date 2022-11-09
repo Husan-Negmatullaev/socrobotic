@@ -17,6 +17,12 @@
     @media (max-width:$mobile) {
       text-align: left;
     }
+
+    &_remove-mobile {
+      @media (max-width:$mobile) {
+        display: none;
+      }
+    }
   }
 
   // .quantity__actions
